@@ -1,8 +1,13 @@
 import { useState } from "react";
 
 import { useMutation, gql } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 const CreateLink = () => {
+  // For automatic redirect from the CreateLink component to the LinkList component
+  // after a mutation is performed.
+  const navigate = useNavigate();
+
   const [formState, setFormState] = useState({
     description: "",
     url: "",
@@ -28,6 +33,7 @@ const CreateLink = () => {
       description: formState.description,
       url: formState.url,
     },
+    onCompleted: () => navigate("/"),
   });
 
   return (
