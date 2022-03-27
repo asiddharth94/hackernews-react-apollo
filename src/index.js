@@ -19,9 +19,9 @@ import reportWebVitals from "./reportWebVitals";
 import { AUTH_TOKEN } from "./constants/constants";
 
 // We create the httpLink that will connect our ApolloClient instance with the GraphQL API.
-// The GraphQL server will be running on http://localhost:4000.
+// The GraphQL server will be running on http://localhost:4000 (updated to heroku-url after deployment).
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000",
+  uri: "https://hackernews-apollo-server-gql.herokuapp.com/",
 });
 
 /* Since all the API requests are actually created and sent by the ApolloClient instance
